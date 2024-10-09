@@ -1,0 +1,9 @@
+{
+  "name": "time-table-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/time-table-e2e/src",
+  "implicitDependencies": ["time-table"],
+  "// targets": "to see all targets run: nx show project time-table-e2e --web",
+  "targets": {}
+}

@@ -1,0 +1,21 @@
+{
+  "run": {
+    "command": "nx storybook time-table",
+    "startTime": "2024-10-09T13:01:27.121Z",
+    "endTime": "2024-10-09T13:05:41.429Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "time-table:storybook",
+      "target": "storybook",
+      "projectName": "time-table",
+      "hash": "4364965494029621110",
+      "startTime": "2024-10-09T13:01:27.125Z",
+      "endTime": "2024-10-09T13:05:41.428Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    }
+  ]
+}

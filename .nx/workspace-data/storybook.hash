@@ -1,0 +1,158 @@
+{
+  "11779221403256904162": {
+    "build-storybook": {
+      "command": "storybook build",
+      "options": {
+        "cwd": "apps/time-table"
+      },
+      "cache": true,
+      "outputs": [
+        "{projectRoot}/storybook-static",
+        "{options.output-dir}",
+        "{options.outputDir}",
+        "{options.o}"
+      ],
+      "inputs": [
+        "production",
+        "^production",
+        {
+          "externalDependencies": [
+            "storybook",
+            "@storybook/test-runner"
+          ]
+        }
+      ]
+    },
+    "storybook": {
+      "command": "storybook dev",
+      "options": {
+        "cwd": "apps/time-table"
+      }
+    },
+    "test-storybook": {
+      "command": "test-storybook",
+      "options": {
+        "cwd": "apps/time-table"
+      },
+      "inputs": [
+        {
+          "externalDependencies": [
+            "storybook",
+            "@storybook/test-runner"
+          ]
+        }
+      ]
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "build-storybook",
+        "staticFilePath": "apps/time-table/storybook-static"
+      }
+    }
+  },
+  "506541493201323957": {
+    "build-storybook": {
+      "command": "storybook build",
+      "options": {
+        "cwd": "apps/time-table"
+      },
+      "cache": true,
+      "outputs": [
+        "{projectRoot}/storybook-static",
+        "{options.output-dir}",
+        "{options.outputDir}",
+        "{options.o}"
+      ],
+      "inputs": [
+        "production",
+        "^production",
+        {
+          "externalDependencies": [
+            "storybook",
+            "@storybook/test-runner"
+          ]
+        }
+      ]
+    },
+    "storybook": {
+      "command": "storybook dev",
+      "options": {
+        "cwd": "apps/time-table"
+      }
+    },
+    "test-storybook": {
+      "command": "test-storybook",
+      "options": {
+        "cwd": "apps/time-table"
+      },
+      "inputs": [
+        {
+          "externalDependencies": [
+            "storybook",
+            "@storybook/test-runner"
+          ]
+        }
+      ]
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "build-storybook",
+        "staticFilePath": "apps/time-table/storybook-static"
+      }
+    }
+  },
+  "11162631599489235418": {
+    "build-storybook": {
+      "command": "storybook build",
+      "options": {
+        "cwd": "apps/time-table"
+      },
+      "cache": true,
+      "outputs": [
+        "{projectRoot}/storybook-static",
+        "{options.output-dir}",
+        "{options.outputDir}",
+        "{options.o}"
+      ],
+      "inputs": [
+        "production",
+        "^production",
+        {
+          "externalDependencies": [
+            "storybook",
+            "@storybook/test-runner"
+          ]
+        }
+      ]
+    },
+    "storybook": {
+      "command": "storybook dev",
+      "options": {
+        "cwd": "apps/time-table"
+      }
+    },
+    "test-storybook": {
+      "command": "test-storybook",
+      "options": {
+        "cwd": "apps/time-table"
+      },
+      "inputs": [
+        {
+          "externalDependencies": [
+            "storybook",
+            "@storybook/test-runner"
+          ]
+        }
+      ]
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "build-storybook",
+        "staticFilePath": "apps/time-table/storybook-static"
+      }
+    }
+  }
+}
