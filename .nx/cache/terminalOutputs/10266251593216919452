@@ -1,0 +1,86 @@
+[2m> [22mstorybook dev
+
+[1m@storybook/core v8.3.5[22m[0m[0m
+[0m[0m
+[32minfo[0m[35m[0m => Starting manager..
+[0m[32minfo[0m[35m[0m => Starting preview..
+[0m[33mThe CJS build of Vite's Node API is deprecated. See https://vitejs.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+[32minfo[0m[35m[0m Using tsconfig paths for react-docgen
+[0m[38;2;241;97;140m╭───────────────────────────────────────────────────╮[39m
+[38;2;241;97;140m│[39m                                                   [38;2;241;97;140m│[39m
+[38;2;241;97;140m│[39m   [38;2;162;224;94mStorybook [1m8.3.5[22m for [1mreact-vite[22m started[39m          [38;2;241;97;140m│[39m
+[38;2;241;97;140m│[39m   [90m[4m423 ms[24m for manager and [4m5.49 s[24m for preview[39m       [38;2;241;97;140m│[39m
+[38;2;241;97;140m│[39m                                                   [38;2;241;97;140m│[39m
+[38;2;241;97;140m│[39m    Local:            [36mhttp://localhost:65350/[39m      [38;2;241;97;140m│[39m
+[38;2;241;97;140m│[39m    On your network:  [36mhttp://192.168.0.6:65350/[39m    [38;2;241;97;140m│[39m
+[38;2;241;97;140m│[39m                                                   [38;2;241;97;140m│[39m
+[38;2;241;97;140m╰───────────────────────────────────────────────────╯[39m
+/Users/kb/.yarn/berry/cache/storybook-npm-8.3.5-15faa4b813-10c0.zip/node_modules/storybook/bin/index.cjs:23
+  throw error;
+  ^
+
+Error: [postcss] Your application tried to access @subject/libs, but it isn't declared in your dependencies; this makes the require call ambiguous and unsound.
+
+Required package: @subject/libs (via "@subject/libs/shared/shadcn-ui/util/tailwind/tailwind.config")
+Required by: /Users/kb/Desktop/project/subject/apps/time-table/
+
+Require stack:
+- /Users/kb/Desktop/project/subject/apps/time-table/tailwind.config.js
+    at require$$0.Module._resolveFilename (/Users/kb/Desktop/project/subject/.pnp.cjs:32215:13)
+    at Module._resolveFilename (/Users/kb/Desktop/project/subject/.yarn/__virtual__/esbuild-register-virtual-5f1816c5f0/4/.yarn/berry/cache/esbuild-register-npm-3.6.0-72017fa8ae-10c0.zip/node_modules/[4mesbuild-register[24m/dist/node.js:4794:36)
+[90m    at Function.resolve (node:internal/modules/helpers:187:19)[39m
+    at _resolve (/Users/kb/.yarn/berry/cache/jiti-npm-1.21.6-0bb76563a3-10c0.zip/node_modules/[4mjiti[24m/dist/jiti.js:1:241814)
+    at jiti (/Users/kb/.yarn/berry/cache/jiti-npm-1.21.6-0bb76563a3-10c0.zip/node_modules/[4mjiti[24m/dist/jiti.js:1:244531)
+    at [90m/Users/kb/Desktop/project/subject/apps/time-table/[39mtailwind.config.js:1:99
+    at evalModule (/Users/kb/.yarn/berry/cache/jiti-npm-1.21.6-0bb76563a3-10c0.zip/node_modules/[4mjiti[24m/dist/jiti.js:1:247313)
+    at jiti (/Users/kb/.yarn/berry/cache/jiti-npm-1.21.6-0bb76563a3-10c0.zip/node_modules/[4mjiti[24m/dist/jiti.js:1:245241)
+    at /Users/kb/.yarn/berry/cache/tailwindcss-npm-3.4.13-9becc1cf75-10c0.zip/node_modules/[4mtailwindcss[24m/lib/lib/load-config.js:56:30
+    at loadConfig (/Users/kb/.yarn/berry/cache/tailwindcss-npm-3.4.13-9becc1cf75-10c0.zip/node_modules/[4mtailwindcss[24m/lib/lib/load-config.js:58:6)
+    at getTailwindConfig (/Users/kb/.yarn/berry/cache/tailwindcss-npm-3.4.13-9becc1cf75-10c0.zip/node_modules/[4mtailwindcss[24m/lib/lib/setupTrackingContext.js:71:116)
+    at /Users/kb/.yarn/berry/cache/tailwindcss-npm-3.4.13-9becc1cf75-10c0.zip/node_modules/[4mtailwindcss[24m/lib/lib/setupTrackingContext.js:100:92
+    at /Users/kb/.yarn/berry/cache/tailwindcss-npm-3.4.13-9becc1cf75-10c0.zip/node_modules/[4mtailwindcss[24m/lib/processTailwindFeatures.js:46:11
+    at plugins (/Users/kb/.yarn/berry/cache/tailwindcss-npm-3.4.13-9becc1cf75-10c0.zip/node_modules/[4mtailwindcss[24m/lib/plugin.js:38:69)
+    at LazyResult.runOnRoot (/Users/kb/.yarn/berry/cache/postcss-npm-8.4.47-2f4d4be1fa-10c0.zip/node_modules/[4mpostcss[24m/lib/lazy-result.js:329:16)
+    at LazyResult.runAsync (/Users/kb/.yarn/berry/cache/postcss-npm-8.4.47-2f4d4be1fa-10c0.zip/node_modules/[4mpostcss[24m/lib/lazy-result.js:258:26)
+    at LazyResult.async (/Users/kb/.yarn/berry/cache/postcss-npm-8.4.47-2f4d4be1fa-10c0.zip/node_modules/[4mpostcss[24m/lib/lazy-result.js:160:30)
+    at LazyResult.then (/Users/kb/.yarn/berry/cache/postcss-npm-8.4.47-2f4d4be1fa-10c0.zip/node_modules/[4mpostcss[24m/lib/lazy-result.js:404:17) {
+  loc: { file: [90mundefined[39m, line: [90mundefined[39m, column: [33mNaN[39m },
+  plugin: [32m'vite:css'[39m,
+  id: [32m'\x00/iframe.html?html-proxy&direct&index=0.css'[39m,
+  pluginCode: [32m'\n'[39m +
+    [32m'      @font-face {\n'[39m +
+    [32m"        font-family: 'Nunito Sans';\n"[39m +
+    [32m'        font-style: normal;\n'[39m +
+    [32m'        font-weight: 400;\n'[39m +
+    [32m'        font-display: swap;\n'[39m +
+    [32m"        src: url('./sb-common-assets/nunito-sans-regular.woff2') format('woff2');\n"[39m +
+    [32m'      }\n'[39m +
+    [32m'\n'[39m +
+    [32m'      @font-face {\n'[39m +
+    [32m"        font-family: 'Nunito Sans';\n"[39m +
+    [32m'        font-style: italic;\n'[39m +
+    [32m'        font-weight: 400;\n'[39m +
+    [32m'        font-display: swap;\n'[39m +
+    [32m"        src: url('./sb-common-assets/nunito-sans-italic.woff2') format('woff2');\n"[39m +
+    [32m'      }\n'[39m +
+    [32m'\n'[39m +
+    [32m'      @font-face {\n'[39m +
+    [32m"        font-family: 'Nunito Sans';\n"[39m +
+    [32m'        font-style: normal;\n'[39m +
+    [32m'        font-weight: 700;\n'[39m +
+    [32m'        font-display: swap;\n'[39m +
+    [32m"        src: url('./sb-common-assets/nunito-sans-bold.woff2') format('woff2');\n"[39m +
+    [32m'      }\n'[39m +
+    [32m'\n'[39m +
+    [32m'      @font-face {\n'[39m +
+    [32m"        font-family: 'Nunito Sans';\n"[39m +
+    [32m'        font-style: italic;\n'[39m +
+    [32m'        font-weight: 700;\n'[39m +
+    [32m'        font-display: swap;\n'[39m +
+    [32m"        src: url('./sb-common-assets/nunito-sans-bold-italic.woff2') format('woff2');\n"[39m +
+    [32m'      }\n'[39m +
+    [32m'    '[39m,
+  frame: [32m''[39m
+}
+
+Node.js v20.11.0

@@ -1,0 +1,9 @@
+{
+  "name": "time-table",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/time-table/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project time-table --web",
+  "targets": {}
+}
