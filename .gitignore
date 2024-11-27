@@ -7,6 +7,7 @@ tmp
 
 # dependencies
 node_modules
+**/node_modules
 
 # IDEs and editors
 /.idea
@@ -41,5 +42,8 @@ Thumbs.db
 .nx/cache
 .nx/workspace-data
 
-
 storybook-static
+
+.DS_Store
+
+.wakatime-project

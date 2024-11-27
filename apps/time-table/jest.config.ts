@@ -7,4 +7,6 @@ export default {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/apps/time-table',
+  testEnvironment: 'jest-fixed-jsdom',
+  setupFilesAfterEnv: ['./jest.setup.js'],
 };

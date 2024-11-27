@@ -1,7 +1,11 @@
+// https://nx.dev/recipes/storybook/custom-builder-configs#projectspecific-configuration
+import { mergeConfig } from 'vite';
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
-  stories: ['../src/app/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
+  stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
   addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],
   framework: {
     name: '@storybook/react-vite',
@@ -11,6 +15,10 @@ const config: StorybookConfig = {
       },
     },
   },
+  // viteFinal: async (config) =>
+  //   mergeConfig(config, {
+  //     plugins: [nxViteTsPaths()],
+  //   }),
 };
 
 export default config;
