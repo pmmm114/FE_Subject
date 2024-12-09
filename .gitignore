@@ -41,5 +41,16 @@ Thumbs.db
 .nx/cache
 .nx/workspace-data
 
-
 storybook-static
+
+.DS_Store
+
+.wakatime-project
+
+# env
+.env*
+
+# Yarn Dependencies
+.yarn/cache
+.yarn/unplugged
+.yarn/install-state.gz

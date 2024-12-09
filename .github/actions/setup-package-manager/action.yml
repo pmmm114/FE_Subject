@@ -1,0 +1,11 @@
+# action.yml
+name: 'Setup Package Manager'
+description: 'Setup Package Manager'
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Package Manager
+      shell: bash
+      run: |
+        corepack enable
+        corepack install
