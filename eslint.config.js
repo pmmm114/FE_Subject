@@ -13,6 +13,7 @@ module.exports = [
       '@nx/enforce-module-boundaries': [
         'error',
         {
+          allowCircularSelfDependency: true,
           enforceBuildableLibDependency: true,
           allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$'],
           depConstraints: [

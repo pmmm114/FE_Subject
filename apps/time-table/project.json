@@ -3,7 +3,28 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/time-table/src",
   "projectType": "application",
-  "tags": [],
+  "tags": [
+    "type:app"
+  ],
   "// targets": "to see all targets run: nx show project time-table --web",
-  "targets": {}
+  "targets": {
+    "storybook": {
+      "options": {
+        "port": 6006
+      }
+    },
+    "build": {
+      "executor": "@nx/vite:build",
+      "options": {
+        "outputPath": "dist/apps/time-table",
+        "postcssConfig": "apps/time-table/postcss.config.js"
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "options": {
+        "config": "apps/time-table/vitest.config.ts"
+      }
+    }
+  }
 }
