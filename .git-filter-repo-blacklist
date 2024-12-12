@@ -8,4 +8,4 @@ regex:^docs/.*\.md$
 regex:^scripts/lab/.*$
 
 # 앱 디렉토리에 불필요한 구현체가 포함된 디렉토리 제외
-regex:^apps/[^/]+/src/(?!assets/|libs/|service/|test/|app/|components/)
+regex:^apps/[^/]+/src/(?!assets/|libs/|service/|test/|app/|components/|global.css|main.tsx)
