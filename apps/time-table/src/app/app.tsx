@@ -1,10 +1,5 @@
 export function App() {
-  return (
-    <div>
-      App
-      <span>Hello</span>
-    </div>
-  );
+  return <div>TimeTable</div>;
 }
 
 export default App;
