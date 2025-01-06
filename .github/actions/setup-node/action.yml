@@ -1,0 +1,14 @@
+# action.yml
+name: 'Setup Node.js'
+description: 'Setup Node.js environment'
+inputs:
+  node-version-file:
+    description: 'Path to the node version file'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: ${{ inputs.node-version-file }}

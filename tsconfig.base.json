@@ -15,10 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@subject/libs/shared/shadcn-ui/ui/*": ["libs/shared/shadcn-ui/ui/src/*"],
-      "@subject/libs/shared/shadcn-ui/util/*": [
-        "libs/shared/shadcn-ui/util/src/*"
-      ]
+      "@TimeTable/*": ["apps/time-table/src/*"],
+      "@libs/shared/shadcn-ui/ui/*": ["libs/shared/shadcn-ui/ui/src/*"],
+      "@libs/shared/shadcn-ui/util/*": ["libs/shared/shadcn-ui/util/src/*"],
+      "@libs/shared/utils/*": ["libs/shared/utils/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

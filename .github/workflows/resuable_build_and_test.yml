@@ -1,0 +1,111 @@
+on:
+  workflow_call:
+    inputs:
+      build:
+        required: true
+        type: boolean
+        description: 'Whether to build the project'
+        default: false
+      test:
+        required: true
+        type: boolean
+        description: 'Whether to test the project'
+        default: false
+      exclude_affected_type:
+        required: false
+        type: string
+        description: |
+          Project type to exclude from affected commands.
+          - 'app': Excludes all affected app projects
+          - 'lib': Excludes all affected library projects
+          - If not specified, includes all affected projects
+      environment:
+        required: false
+        type: string
+        description: 'The environment to use for the workflow'
+
+jobs:
+  build:
+    name: Affected Apps Build
+    runs-on: ubuntu-latest
+    if: ${{ inputs.build }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ${{ vars.DEPENDENCIES_CACHE_DIR }}
+            ${{ vars.UNPLUGGED_CACHE_DIR }}
+            ${{ vars.INSTALL_STATE_PATH }}
+            .pnp.*
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - uses: ./.github/actions/setup-node
+        with:
+          node-version-file: '.nvmrc'
+
+      - uses: ./.github/actions/setup-package-manager
+
+      - name: Build Affected Apps
+        run: |
+          CMD="./scripts/common/nx-affected.sh"
+
+          # type 인자가 있는 경우에만 추가
+          if [ -n "${{ inputs.exclude_affected_type }}" ]; then
+            CMD="$CMD --type ${{ inputs.exclude_affected_type }}"
+          fi
+
+          # 필수 인자들 추가
+          CMD="$CMD --base origin/${{ github.base_ref }} --head origin/${{ github.head_ref }} -t build"
+
+          # 실행
+          echo "Executing: $CMD"
+          eval "$CMD"
+  test:
+    name: Affected Apps Test
+    runs-on: ubuntu-latest
+    if: ${{ inputs.test }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ${{ vars.DEPENDENCIES_CACHE_DIR }}
+            ${{ vars.UNPLUGGED_CACHE_DIR }}
+            ${{ vars.INSTALL_STATE_PATH }}
+            .pnp.*
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - uses: ./.github/actions/setup-node
+        with:
+          node-version-file: '.nvmrc'
+
+      - uses: ./.github/actions/setup-package-manager
+
+      - name: Test
+        run: |
+          CMD="./scripts/common/nx-affected.sh"
+
+          # type 인자가 있는 경우에만 추가
+          if [ -n "${{ inputs.exclude_affected_type }}" ]; then
+            CMD="$CMD --type ${{ inputs.exclude_affected_type }}"
+          fi
+
+          # 필수 인자들 추가
+          CMD="$CMD --base origin/${{ github.base_ref }} --head origin/${{ github.head_ref }} -t test"
+
+          # 실행
+          echo "Executing: $CMD"
+          eval "$CMD"
