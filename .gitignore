@@ -50,6 +50,9 @@ storybook-static
 # env
 .env*
 
+# act
+act/
+
 # Yarn Dependencies
 .yarn/cache
 .yarn/unplugged
